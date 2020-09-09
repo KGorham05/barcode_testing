@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/dynamsoft-javascript-barcode@7.6.0/dist/dbr.js" data-productKeys="t0068NQAAAHjhfnwJqrSb4VbGP9S39CUc2z1obTmpUqzuEYYo0+HliFA+2cPGOOndnlPqi5BLEjoEFeNGEgT3pYkFUKSI3VM="></script>
+    <script>
+        let scanner = null;
+        (async()=>{
+            scanner = await Dynamsoft.BarcodeScanner.createInstance();
+            scanner.onFrameRead = results => {console.log(results);};
+            scanner.onUnduplicatedRead = (txt, result) => {alert(txt);};
+            await scanner.show();
+        })();
+    </script>
+</body>
+</html>
+
+<!-- https://www.dynamsoft.com/Downloads/Dynamic-Barcode-Reader-Sample-Download.aspx?Tag=web-app#gallery -->
